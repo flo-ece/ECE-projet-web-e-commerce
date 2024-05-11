@@ -17,6 +17,7 @@ import { DemoNgZorroAntdModule } from './DemoNgZorroAntdModule';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { InscriptionClientComponent } from './pillier/components/inscription-client/inscription-client.component';
+import { InscriptionEntrepriseComponent } from './pillier/components/inscription-entreprise/inscription-entreprise.component';
 registerLocaleData(fr);
 
 @NgModule({
@@ -26,7 +27,8 @@ registerLocaleData(fr);
     InscriptionComponent,
     AuthentificationComponent,
     UserStockageComponent,
-    InscriptionClientComponent
+    InscriptionClientComponent,
+    InscriptionEntrepriseComponent
   ],
   imports: [
     NzLayoutModule,
