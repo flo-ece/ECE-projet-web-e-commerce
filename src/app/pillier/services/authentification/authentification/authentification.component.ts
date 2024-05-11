@@ -1,14 +1,14 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
+import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable, map } from 'rxjs';
 
 const BASIC_URL = 'http://localhost:4200/';
+export const AUTH_HEADER = 'authorization';
 
-@Component({
-  selector: 'app-authentification',
-  templateUrl: './authentification.component.html',
-  styleUrl: './authentification.component.scss'
+@Injectable({
+  providedIn: 'root'
 })
+
 export class AuthentificationComponent {
   constructor(private http: HttpClient,) {}
   registerClient(signupRequestDTO:any): Observable<any>{
@@ -17,5 +17,18 @@ export class AuthentificationComponent {
 
   registerCompany(signupRequestDTO:any): Observable<any>{
     return this.http.post(BASIC_URL + "company/sign-up", signupRequestDTO);
+  }
+
+  login(username:string, password:string){
+    return this.http.post(BASIC_URL + "authenticate", {username, password}, 
+    {observe:'response'}).pipe(
+      map((res:HttpResponse<any>)=>{
+        console.log(res.body)
+        const tokenLength = res.headers.get(AUTH_HEADER)?.length;
+        const bearerToken = res.headers.get(AUTH_HEADER)?.substring(7, tokenLength);
+        console.log(bearerToken);
+        return res;
+      })
+    );
   }
 }
