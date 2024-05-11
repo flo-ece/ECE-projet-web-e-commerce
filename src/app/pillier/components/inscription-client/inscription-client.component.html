@@ -1,0 +1,48 @@
+<div class="bg">
+    <div class="parent">
+        <div class="child">
+            <div nz-col>
+                <h1 style="margin-left: 55px">
+                    Inscription
+                </h1>
+            </div>
+            <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm">
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="E-mail non valide !">
+                        <input nz-input placeholder="E-mail" formControlName="email" id="email"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Mot de passe incorrect !">
+                        <input nz-input placeholder="Mot de passe" formControlName="password" id="email"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Mot de passe incorrect !">
+                        <input nz-input placeholder="Confirmer le mot de passe" formControlName="validate_password" id="email"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Prénom non valide !">
+                        <input nz-input placeholder="Prénom" formControlName="first_name" id="email"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Nom non valide !">
+                        <input nz-input placeholder="Nom" formControlName="last_name" id="email"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <nz-form-item>
+                    <nz-form-control nzHasFeedback nzErrorTip="Numéro non valide !">
+                        <input nz-input placeholder="Téléphone" formControlName="phone" id="email"/>
+                    </nz-form-control>
+                </nz-form-item>
+                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+                    Valider
+                </button>
+                Or <a routerLink="/login">Se connecter</a>
+
+            </form>
+        </div>
+    </div>
+</div>
