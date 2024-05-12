@@ -25,11 +25,11 @@ export class AuthentificationComponent {
     {observe:'response'}).pipe(
       map((res:HttpResponse<any>)=>{
         console.log(res.body)
-        this.userstockageComponent.saveUser(res.body);
+        //this.userstockageComponent.saveUser(res.body);
         const tokenLength = res.headers.get(AUTH_HEADER)?.length;
         const bearerToken = res.headers.get(AUTH_HEADER)?.substring(7, tokenLength);
         console.log(bearerToken);
-        this.userstockageComponent.saveToken(bearerToken);
+        //this.userstockageComponent.saveToken(bearerToken);
         return res;
       })
     );
