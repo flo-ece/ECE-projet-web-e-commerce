@@ -6,7 +6,9 @@ import { InscriptionEntrepriseComponent } from './pillier/components/inscription
 const routes: Routes = [
   { path: 'entreprise', loadChildren: () => import('./entreprise/entreprise.module').then(m => m.EntrepriseModule) },
   { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
-  { path: 'register_client', component: InscriptionClientComponent}];
+  { path: 'register_client', component: InscriptionClientComponent },
+  { path: 'register_entreprise', component: InscriptionEntrepriseComponent },
+  { path: 'inscription-client', component: InscriptionClientComponent }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

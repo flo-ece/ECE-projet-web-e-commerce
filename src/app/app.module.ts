@@ -25,7 +25,6 @@ registerLocaleData(fr);
     AppComponent,
     LoginComponent,
     InscriptionComponent,
-    AuthentificationComponent,
     UserStockageComponent,
     InscriptionClientComponent,
     InscriptionEntrepriseComponent
