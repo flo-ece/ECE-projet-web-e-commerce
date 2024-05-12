@@ -21,7 +21,7 @@ export class AuthentificationComponent {
   }
 
   login(username:string, password:string){
-    return this.http.post(BASIC_URL + "authenticate", {username, password}, 
+    return this.http.post(BASIC_URL + "authenticate", {username, password},
     {observe:'response'}).pipe(
       map((res:HttpResponse<any>)=>{
         console.log(res.body)
