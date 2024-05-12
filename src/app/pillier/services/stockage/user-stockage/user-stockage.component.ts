@@ -17,7 +17,7 @@ localStorage.clear();
 })
 
 export class UserStockageComponent {
-  /*constructor() {}
+  constructor() {}
   
   public saveToken(token : string) : void{
     window.localStorage.removeItem(TOKEN);
@@ -72,5 +72,5 @@ export class UserStockageComponent {
   static signOut() : void {
     window.localStorage.removeItem(TOKEN);
     window.localStorage.removeItem(USER);
-  }*/
+  }
 }

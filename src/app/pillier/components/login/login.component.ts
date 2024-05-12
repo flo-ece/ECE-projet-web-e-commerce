@@ -30,11 +30,11 @@ export class LoginComponent {
     this.authService.login(this.validateForm.get(['userName'])!.value, 
     this.validateForm.get(['password'])!.value).subscribe(res =>{
       console.log(res);
-      /*if (UserStockageComponent.isClientLogIn){
+      if (UserStockageComponent.isClientLogIn){
         this.router.navigateByUrl('client/accueil')
       } else if (UserStockageComponent.isCompanyLogIn){
         this.router.navigateByUrl('entreprise/accueil')
-      }*/
+      }
     }, error =>{
       this.notification.error('ERREUR', 'Erreur', {nzDuration: 5000}
       )
