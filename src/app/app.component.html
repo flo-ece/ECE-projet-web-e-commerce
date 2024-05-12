@@ -1,14 +1,71 @@
-<nz-header class="main-header" nz-row nzType="flex" style="background-color: #1473B9">
-  <div>
-    <h2 style="color: white; padding-left: 10px;">ECE commerce</h2>
-  </div>
+<div *ngIf="!isClientLogIn && !isCompanyLogIn">
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #1473B9">
+    <div>
+      <h2 style="color: white; padding-left: 10px;">ECE commerce</h2>
+    </div>
 
-  <div class="nav-links">
-    <a nz-button nzType="link" routerLink="/accueil" routerLinkActive="active">Accueil</a>
-    <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Connexion</a>
-    <a nz-button nzType="link" routerLink="/inscription" routerLinkActive="active">Inscription</a>
-  </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/accueil" routerLinkActive="active">Accueil</a>
+      <a nz-button nzType="link" routerLink="/login" routerLinkActive="active">Connexion</a>
+      <a nz-button nzType="link" routerLink="/inscription-client" routerLinkActive="active">Vous voulez devenir client ? Inscrivez-vous</a>
+      <a nz-button nzType="link" routerLink="/inscription-entreprise" routerLinkActive="active">Vous êtes une entreprise ? Inscrivez-vous</a>
+    </div>
 
-</nz-header>
+  </nz-header>
+</div>
+<div *ngIf="isClientLogIn">
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #1473B9">
+    <div>
+      <h2 style="color: white; padding-left: 10px;">ECE commerce</h2>
+    </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/client/accueil" routerLinkActive="active">Accueil</a>
+      <a nz-button nzType="link" routerLink="/client/panier" routerLinkActive="active">Panier</a>
+      <a nz-button nzType="link" routerLink="logout()" routerLinkActive="active">Se déconnecter</a>
+    </div>
+  </nz-header>
+  <nz-slider nzCollapsible nzBreakPoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+    <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/client/accueil" routerLinkActive="active">Accueil</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/client/panier" routerLinkActive="active">Panier</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="logout()" routerLinkActive="active">Se déconnecter</a>
+      </li>
+    </ul>
+  </nz-slider>
+</div>
+<div *ngIf="isCompanyLogIn">
+  <nz-header class="main-header" nz-row nzType="flex" style="background-color: #1473B9">
+    <div>
+      <h2 style="color: white; padding-left: 10px;">ECE commerce</h2>
+    </div>
+    <div class="nav-links">
+      <a nz-button nzType="link" routerLink="/entreprise/accueil" routerLinkActive="active">Accueil</a>
+      <a nz-button nzType="link" routerLink="/entreprise/annonces" routerLinkActive="active">Annonces</a>
+      <a nz-button nzType="link" routerLink="/entreprise/poster" routerLinkActive="active">Poster une annonce</a>
+      <a nz-button nzType="link" routerLink="logout()" routerLinkActive="active">Se déconnecter</a>
+    </div>
+  </nz-header>
+  <nz-slider nzCollapsible nzBreakPoint="lg" [nzCollapsedWidth]="0" class="mobile-sidenav">
+    <ul class="nav-links" nz-menu nzTheme="dark" nzMode="inline">
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/entreprise/accueil" routerLinkActive="active">Accueil</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/entreprise/annonces" routerLinkActive="active">Annonces</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="/entreprise/poster" routerLinkActive="active">Poster une annonce</a>
+      </li>
+      <li nz-menu-item>
+        <a nz-button nzType="link" routerLink="logout()" routerLinkActive="active">Se déconnecter</a>
+      </li>
+    </ul>
+  </nz-slider>
+</div>
 
 <router-outlet></router-outlet>
