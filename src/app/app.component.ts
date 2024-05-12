@@ -10,8 +10,8 @@ import { Router } from '@angular/router';
 export class AppComponent {
   title = 'ecommerceEce';
 
-  /*isClientLogIn : boolean = UserStockageComponent.isClientLogIn();
-  isCompanyLogIn : boolean = UserStockageComponent.isCompanyLogIn();
+  isClientLogIn!: boolean;
+  isCompanyLogIn!: boolean;
 
   constructor (private router : Router){}
 
@@ -25,5 +25,5 @@ export class AppComponent {
   logout() {
     UserStockageComponent.signOut();
     this.router.navigateByUrl('login');
-  }*/
+  }
 }

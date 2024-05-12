@@ -1,16 +1,7 @@
 import { Injectable } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
 
 const TOKEN = 's_token';
 const USER = 's_user';
-const filename = typeof __filename !== 'undefined' ? __filename : './my-local-storage';
-
-const { LocalStorage } = require('node-localstorage');
-const localStorage = new LocalStorage(filename);
-localStorage.setItem('key', 'value');
-const value = localStorage.getItem('key');
-localStorage.removeItem('key');
-localStorage.clear();
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +11,8 @@ export class UserStockageComponent {
   constructor() {}
   
   public saveToken(token : string) : void{
-    window.localStorage.removeItem(TOKEN);
-    window.localStorage.setItem(TOKEN, token);
+    localStorage.removeItem(TOKEN);
+    localStorage.setItem(TOKEN, token);
   }
 
   static getToken() : string {
@@ -29,8 +20,8 @@ export class UserStockageComponent {
   }
 
   public saveUser(user) : void{
-    window.localStorage.removeItem(USER);
-    window.localStorage.setItem(USER, JSON.stringify(user));
+    localStorage.removeItem(USER);
+    localStorage.setItem(USER, JSON.stringify(user));
   }
   
   static getUser() : any {

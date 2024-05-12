@@ -29,7 +29,7 @@ export class EntrepriseAnnoncesComponent {
     }
   
     onFileSelected(envent:any){
-      this.selectedFile = event.target.files[0];
+      this.selectedFile = envent.target.files[0];
       this.previewImage();
     }
 
