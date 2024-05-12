@@ -3,7 +3,7 @@
         <div class="child">
             <div nz-row class="imgDiv">
                 <div nz-col nzSpan="24">
-                    <h1 style="margin-left: 100px;"Login></h1>
+                    <h1 style="margin-left: 70px;">Connexion</h1>
                 </div>
             </div>
             <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
@@ -22,7 +22,8 @@
                     </nz-form-control>
                 </nz-form-item>
                 <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Se connecter</button>
-                Ou <a routerLink="/register">S'inscrire</a>
+                Ou <a routerLink="/inscription-client">s'inscrire en tant que client</a>
+                <br>ou bien <a routerLink="/inscription-entreprise">s'inscrire en tant qu'entreprise</a>
             </form>
         </div>
     </div>

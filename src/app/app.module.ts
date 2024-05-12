@@ -3,7 +3,6 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pillier/components/login/login.component';
-import { InscriptionComponent } from './pillier/components/inscription/inscription.component';
 import { AuthentificationComponent } from './pillier/services/authentification/authentification/authentification.component';
 import { UserStockageComponent } from './pillier/services/stockage/user-stockage/user-stockage.component';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
@@ -18,15 +17,13 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { InscriptionClientComponent } from './pillier/components/inscription-client/inscription-client.component';
 import { InscriptionEntrepriseComponent } from './pillier/components/inscription-entreprise/inscription-entreprise.component';
+
 registerLocaleData(fr);
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    InscriptionComponent,
-    AuthentificationComponent,
-    UserStockageComponent,
     InscriptionClientComponent,
     InscriptionEntrepriseComponent
   ],
