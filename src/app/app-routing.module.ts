@@ -4,10 +4,9 @@ import { InscriptionClientComponent } from './pillier/components/inscription-cli
 import { InscriptionEntrepriseComponent } from './pillier/components/inscription-entreprise/inscription-entreprise.component';
 
 const routes: Routes = [
-  { path: 'entreprise', loadChildren: () => import('./entreprise/entreprise.module').then(m => m.EntrepriseModule) }, { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
-  { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) }, { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
-  { path: 'register_client', component: InscriptionClientComponent},
-  { path: 'register_entreprise', component: InscriptionEntrepriseComponent}];
+  { path: 'entreprise', loadChildren: () => import('./entreprise/entreprise.module').then(m => m.EntrepriseModule) },
+  { path: 'client', loadChildren: () => import('./client/client.module').then(m => m.ClientModule) },
+  { path: 'register_client', component: InscriptionClientComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
