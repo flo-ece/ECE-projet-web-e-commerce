@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 
-const BASIC_URL = 'http://localhost:4200/';
+const BASIC_URL = 'http://localhost:8080/';
 export const AUTH_HEADER = 'authorization';
 
 @Injectable({
@@ -12,7 +12,7 @@ export const AUTH_HEADER = 'authorization';
 export class AuthentificationComponent {
   constructor(private http: HttpClient,) {}
   registerClient(signupRequestDTO:any): Observable<any>{
-    return this.http.post(BASIC_URL + "client/sign-up", signupRequestDTO);
+    return this.http.post(BASIC_URL + "inscription-client/sign-up", signupRequestDTO);
   }
 
   registerCompany(signupRequestDTO:any): Observable<any>{
