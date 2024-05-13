@@ -14,8 +14,8 @@ export class LoginComponent {
   validateForm!: FormGroup;
 
   constructor(private fb: FormBuilder,
-    private authService: AuthentificationComponent, 
-    private notification: NzNotificationService, 
+    private authService: AuthentificationComponent,
+    private notification: NzNotificationService,
     private router: Router,
   ){}
 
@@ -27,16 +27,19 @@ export class LoginComponent {
   }
 
   submitForm(){
-    this.authService.login(this.validateForm.get(['userName'])!.value, 
+    this.authService.login(this.validateForm.get(['username'])!.value,
     this.validateForm.get(['password'])!.value).subscribe(res =>{
       console.log(res);
       if (UserStockageComponent.isClientLogIn){
         this.router.navigateByUrl('client/accueil')
+        console.log("coucou j'existe!!")
       } else if (UserStockageComponent.isCompanyLogIn){
         this.router.navigateByUrl('entreprise/accueil')
+        console.log("coucou j'existe!!")
       }
     }, error =>{
       this.notification.error('ERREUR', 'Erreur', {nzDuration: 5000}
+
       )
     })
   }
