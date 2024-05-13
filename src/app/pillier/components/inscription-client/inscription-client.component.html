@@ -37,7 +37,7 @@
                         <input nz-input placeholder="Téléphone" formControlName="phone" id="email"/>
                     </nz-form-control>
                 </nz-form-item>
-                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
+                <button (click)="submitForm()" nz-button class="login-form-button login-form-margin" [nzType]="'primary'">
                     Valider
                 </button>
                 Ou <a routerLink="/login">Se connecter</a>

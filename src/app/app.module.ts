@@ -17,7 +17,8 @@ import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { InscriptionClientComponent } from './pillier/components/inscription-client/inscription-client.component';
 import { InscriptionEntrepriseComponent } from './pillier/components/inscription-entreprise/inscription-entreprise.component';
-
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzInputModule } from 'ng-zorro-antd/input';
 registerLocaleData(fr);
 
 @NgModule({
@@ -34,6 +35,9 @@ registerLocaleData(fr);
     FormsModule,
     DemoNgZorroAntdModule,
     ReactiveFormsModule,
+    NzButtonModule,
+    NzInputModule,
+
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [

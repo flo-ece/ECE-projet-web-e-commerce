@@ -21,7 +21,7 @@
                         </nz-input-group>
                     </nz-form-control>
                 </nz-form-item>
-                <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Se connecter</button>
+                <button (click)="submitForm()" nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Se connecter</button>
                 Ou <a routerLink="/inscription-client">s'inscrire en tant que client</a>
                 <br>ou bien <a routerLink="/inscription-entreprise">s'inscrire en tant qu'entreprise</a>
             </form>
